@@ -57,7 +57,7 @@ Security policies remain simple and easy to maintain.
 Teachers and admins enjoy unrestricted access because nothing blocks them.
 
 
-#**4. PROJECT PROCEDURE**
+# **4. PROJECT PROCEDURE**
 1. Draw your network (physical and logical).
 2. Configure VLANs 10, 20, and 30 on your switch.
 3. Assign PCs and laptops to the correct VLANs.
