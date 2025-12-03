@@ -72,8 +72,7 @@ o Restrict unnecessary ports for Students.
 
 
 # **5. TEST**
-Testing Guide (What You Must Try)
-Test     Expected Result
+
 Student PC to Teachers PC (any service) Blocked
 Student PC to Admin PC (any service) Blocked
 Student PC to Admin Server via HTTP/HTTPS ✔ Allowed
