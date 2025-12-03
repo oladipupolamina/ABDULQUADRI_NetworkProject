@@ -2,10 +2,10 @@
 # 1. PROJECT OVERVIEW
 This project involves designing and implementing a segmented network for three departments: Students, Teachers, and Admin. The network requires security enforcement using Access Control Lists (ACLs) to restrict what each group can access, especially the students’ subnet.
 The goals are to:
-Ensure proper network segmentation using VLANs.
-Implement inter-VLAN routing using a router-on-a-stick design.
-Enforce security rules using ACLs.
-Test connectivity to confirm the ACLs work as intended.
+-Ensure proper network segmentation using VLANs.
+-Implement inter-VLAN routing using a router-on-a-stick design.
+-Enforce security rules using ACLs.
+-Test connectivity to confirm the ACLs work as intended.
 
 
 
@@ -17,32 +17,32 @@ Test connectivity to confirm the ACLs work as intended.
 | 30    | Admin      | 172.16.30.0/24 | 1 PC & 1 Server (HTTPS, HTTP, FTP only) |
 
 # FIREWALL/ACL RULES REQUIRED
-#STUDENTS
+# STUDENTS
 The students can access only the Admin server on HTTP (80) & HTTPS (443) but cannot access the Admin PC and Teacher PCs. The student also cannot use any other ports (social media, games, etc.).
-#TEACHERS
+# TEACHERS
 The teachers have full access to all departments.
-#ADMIN
+# ADMIN
 They have full access everywhere. The server only accepts HTTP, HTTPS, and FTP
 
 
 
 # 3. NETWORK PLANNING
 # Why VLAN Segmentation?
-Prevents broadcast storms.
-Provides departmental isolation.
-Improves security.
-Makes applying ACLs much easier since each department is in its own subnet.
+-Prevents broadcast storms.
+-Provides departmental isolation.
+-Improves security.
+-Makes applying ACLs much easier since each department is in its own subnet.
 
 # Why Router-on-a-Stick?
-Only one router interface was available.
-Sub-interfaces allow the router to route between VLANs.
-Efficient and standard in Cisco labs.
+-Only one router interface was available.
+-Sub-interfaces allow the router to route between VLANs.
+-Efficient and standard in Cisco labs.
 
 # Why ACLs on Router Sub-Interfaces?
-ACLs applied inbound on sub-interfaces filter packets as they leave each department, which ensures:
-Student restrictions apply before traffic enters the network core.
-Security policies remain simple and easy to maintain.
-Teachers and admins enjoy unrestricted access because nothing blocks them.
+-ACLs applied inbound on sub-interfaces filter packets as they leave each department, which ensures:
+-Student restrictions apply before traffic enters the network core.
+-Security policies remain simple and easy to maintain.
+-Teachers and admins enjoy unrestricted access because nothing blocks them.
 
 
 # **4. PROJECT PROCEDURE**
