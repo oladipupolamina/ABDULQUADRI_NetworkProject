@@ -10,23 +10,11 @@ Test connectivity to confirm the ACLs work as intended.
 
 
 # 2. REQUIREMENTS (GIVEN CONDITIONS)
- VLANs & IP Subnets
-VLAN
-DEPARTMENT
-NETWORK
-DEVICES
-VLAN 10
-TEACHERS
-172.16.10.0/24
-2 PCs
-VLAN 20
-STUDENTS
-172.16.20.0/24
-2 LAPTOPS AND PCs
-VLAN 30
-ADMIN
-172.16.30.0/24
-1 PC & 1 SERVER (HTTPS, HTTP, FTP only)
+ | VLAN  | Department | Network        | Devices                         |
+|-------|------------|----------------|---------------------------------|
+| 10    | Teachers   | 172.16.10.0/24 | 2 PCs                           |
+| 20    | Students   | 172.16.20.0/24 | 2 Laptops and PCs               |
+| 30    | Admin      | 172.16.30.0/24 | 1 PC & 1 Server (HTTPS, HTTP, FTP only) |
 
 # FIREWALL/ACL RULES REQUIRED
 #STUDENTS
@@ -72,11 +60,12 @@ o Restrict unnecessary ports for Students.
 
 
 # **5. TEST**
-
-Student PC to Teachers PC (any service) Blocked
-Student PC to Admin PC (any service) Blocked
-Student PC to Admin Server via HTTP/HTTPS ✔ Allowed
-Student to Admin Server via FTP or other ports Blocked
-Teacher PC to Student PC ✔ Allowed
-Admin PC to everywhere ✔ Allowed
-Student browsing social media (wrong ports) Blocked
+| Test Scenario                                  | Expected Result |
+|-----------------------------------------------|----------------|
+| Student PC → Teacher PC (any service)         | Blocked        |
+| Student PC → Admin PC (any service)           | Blocked        |
+| Student PC → Admin Server (HTTP/HTTPS)       | ✔ Allowed      |
+| Student PC → Admin Server (FTP/other ports)  | Blocked        |
+| Teacher PC → Student PC                       | ✔ Allowed      |
+| Admin PC → Everywhere                          | ✔ Allowed      |
+| Student browsing social media (wrong ports)  | Blocked        |
